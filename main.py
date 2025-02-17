@@ -59,10 +59,17 @@ st.markdown("""
 
 st.markdown('<div class="separator"></div>', unsafe_allow_html=True)
 
+# Dynamically get the base URL of the app
+base_url = st.experimental_get_query_params().get("_", [""])[0]  # Default to empty string if no base URL
+
+# Construct absolute URLs for each dashboard
+exec_url = f"{base_url}/exec" if base_url else "https://dorcas-001-claims-for-executives-claims-wjpsbm.streamlit.app/"
+managers_url = f"{base_url}/managers" if base_url else "https://dorcas-001-claims-for-managers-claims-wokkfu.streamlit.app/"
+operations_url = f"{base_url}/operations" if base_url else "https://dorcas-001-claims-for-operators-claims-mb8flj.streamlit.app/"
+
 # Create tabs for redirection
 tab_titles = ["Executive Dashboard", "Managers Dashboard", "Operations Dashboard"]
 tabs = st.tabs(tab_titles)
-
 
 # Main Title
 
@@ -72,47 +79,16 @@ st.image("Tiny doctor giving health insurance.jpg", caption='Eden Care Medical',
 
 
 
-# Executive Dashboard Tab
-with tabs[0]:
-    st.markdown("""
-    <div class="tab">
-        <a href="https://dorcas-001-claims-for-executives-claims-wjpsbm.streamlit.app/" target="_self">Executive Dashboard</a>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="text" style="font-size: 1.2em; color: #333; text-align: center;">
-        The Executive Dashboard provides high-level insights into claims management performance, including loss ratio analysis and key metrics.
-    </div>
-    """, unsafe_allow_html=True)
-# Managers Dashboard Tab
-with tabs[1]:
-    st.markdown("""
-    <div class="tab">
-        <a href="https://dorcas-001-claims-for-managers-claims-wokkfu.streamlit.app/" target="_self">Managers Dashboard</a>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="text" style="font-size: 1.2em; color: #333; text-align: center;">
-            The Managers Dashboard offers detailed analysis of claims by product, provider, and client, along with fraud detection capabilities.
-    </div>
-    """, unsafe_allow_html=True)
 
 
-# Operations Dashboard Tab
-with tabs[2]:
-    st.markdown("""
-    <div class="tab">
-        <a href="https://dorcas-001-claims-for-operators-claims-mb8flj.streamlit.app/" target="_self">Operations Dashboard</a>
-    </div>
-    """, unsafe_allow_html=True)
+with tabs[0]:  # Executive Dashboard Tab
+    st.markdown(f'<div class="tab"><a href="{exec_url}" target="_self">Executive Dashboard</a></div>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size: 1.2em; color: #333; text-align: center;">The Executive Dashboard provides high-level insights into claims management performance.</p>', unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="text" style="font-size: 1.2em; color: #333; text-align: center;">
-        The Operations Dashboard focuses on operational efficiency, claim processing times, and day-to-day activities.
-    </div>
-    """, unsafe_allow_html=True)
-# Footer
-st.markdown('---')
-st.markdown('<div style="text-align: center; font-size: 1em;">© 2024 Eden Care. All rights reserved.</div>', unsafe_allow_html=True)
+with tabs[1]:  # Managers Dashboard Tab
+    st.markdown(f'<div class="tab"><a href="{managers_url}" target="_self">Managers Dashboard</a></div>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size: 1.2em; color: #333; text-align: center;">The Managers Dashboard offers detailed analysis of claims by product, provider, and client.</p>', unsafe_allow_html=True)
+
+with tabs[2]:  # Operations Dashboard Tab
+    st.markdown(f'<div class="tab"><a href="{operations_url}" target="_self">Operations Dashboard</a></div>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size: 1.2em; color: #333; text-align: center;">The Operations Dashboard focuses on operational efficiency and day-to-day activities.</p>', unsafe_allow_html=True)
