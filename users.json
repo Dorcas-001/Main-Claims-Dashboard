@@ -1,0 +1,36 @@
+{
+    "users": [
+        {
+            "username": "Dorcas",
+            "password": "$2b$12$GnOMbR6ENTp.e4DwLNuMOOV0kY3btQ2lL83YWkcMbzldpXjqfMUs6"
+        },
+        {
+            "username": "Tshepo",
+            "password": "$2b$12$ved265mk7qzcHm3lLapkGuyW92NFGEtmBZ16tXrPEg4Pcj9g7qiDO"
+        },
+        {
+            "username": "Innocent",
+            "password": "$2b$12$XsU2u60TxirKFZcQS9msG.cbHhysoZd2tEw0IK6j3VoyArUvXlcTa"
+        },
+        {
+            "username": "Kevin R",
+            "password": "$2b$12$nqqwzPR3Nf6RbiSwzO32c.gGhUNPLILZC2eYcjjZesByeuyeNOO7S"
+        },
+        {
+            "username": "Kevin K",
+            "password": "$2b$12$o4qg8HNSpYALsNWi.s7LpuBgl//SjVFtlMWWHbz6jUQgoPSrTrxhi"
+        },
+        {
+            "username": "Kameron",
+            "password": "$2b$12$3lRX1dqEeZA2blOldeCGHupbtxG58ikM7j5/.eWnsf9qXMKMl3SZu"
+        },
+        {
+            "username": "Moses",
+            "password": "$2b$12$AGdq5a3Nul7lfQIG7B3QDupIdulukb6ywV3psDj5aEfsiNeegmnoi"
+        },
+        {
+            "username": "Kameron",
+            "password": "$2b$12$m8sta.BGHKZApuEX2D4MK.BVrqE7cs5TMvFG.RYLAR5Wrwp24c6K."
+        }
+    ]
+}
